@@ -8,6 +8,10 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
+# Environment variables --> to load OPENAI_API_KEY from .env file
+from dotenv import load_dotenv
+load_dotenv()
+
 
 def main():
     """RAG Query Agent for Health Documents"""
