@@ -28,7 +28,8 @@ def main():
 
     # Load documents
     documents = load_documents_from_data()
-    print(f"Number of documents loaded : {len(documents)}")
+
+    print(f"Number of documents loaded : {len(documents)}")  # one pdf page = one document
     if not documents:
         print("No documents found in the data/ directory.")
         return
@@ -43,7 +44,8 @@ def main():
 
     # Create embeddings
     embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2",  # Model for 384-dim vectors, good for general use
+        #model_name="sentence-transformers/all-MiniLM-L6-v2",  # Model for 384-dim vectors, good for general use
+        model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",  # Multilingual model
         encode_kwargs={'normalize_embeddings': True}  # Normalize vectors, important for cosine similarity
     )
 
